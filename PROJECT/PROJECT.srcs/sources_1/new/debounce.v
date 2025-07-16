@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 module debounce #(
-    parameter DEBOUNCE_CYCLES = 1_000_000 // ~20ms at 50MHz
+    parameter DEBOUNCE_CYCLES = 1_000_000 
 )(
     input clk,
     input i,
