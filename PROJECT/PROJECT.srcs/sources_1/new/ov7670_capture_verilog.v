@@ -10,7 +10,7 @@ module ov7670_capture_verilog (
 );
 
     reg [15:0] d_latch = 16'd0;
-    reg byte_toggle = 1'b0;       // Toggle between high and low byte
+    reg byte_toggle = 1'b0;       
     reg [18:0] address_next = 0;
 
     always @(posedge pclk) begin
@@ -24,17 +24,17 @@ module ov7670_capture_verilog (
             byte_toggle <= ~byte_toggle;
 
             if (!byte_toggle) begin
-                d_latch[15:8] <= d; // First byte (MSB)
+                d_latch[15:8] <= d;
                 we <= 0;
             end 
             else begin
-                d_latch[7:0] <= d;  // Second byte (LSB)
+                d_latch[7:0] <= d; 
                 
-                // Convert RGB565 to RGB444
+               
                 dout <= {
-                    d_latch[14:11],  // R[4:1]
-                    d_latch[9:7],1'b0,   // G[5:2]
-                    d_latch[4:1]    // B[4:1]
+                    d_latch[14:11],  
+                    d_latch[9:7],1'b0,   
+                    d_latch[4:1]   
                 };
 
                 addr <= address_next;
@@ -44,7 +44,7 @@ module ov7670_capture_verilog (
             end
         end 
         else begin
-            we <= 0; // No write outside href
+            we <= 0; 
         end
     end
 endmodule
