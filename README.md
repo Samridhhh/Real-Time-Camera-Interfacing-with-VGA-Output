@@ -5,7 +5,7 @@ Real-Time-Camera-Interfacing-with-VGA-Output
 
 ## 🎥 Circuit Schematic
 
-[![Schematic]()
+[![Schematic](https://github.com/Samridhhh/Real-Time-Camera-Interfacing-with-VGA-Output/blob/main/Schematic%20of%20Interfacing%20OV7670%20with%20Nexys-4-DDR.pdf)
 
 ## 🎥 Demo Video
 
